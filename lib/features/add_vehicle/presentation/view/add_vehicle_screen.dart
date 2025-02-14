@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:vehicle_list_app/features/add_vehicle/presentation/provider/add_vehicle_provider.dart';
 import 'package:vehicle_list_app/features/add_vehicle/presentation/view/display_vehicle_screen.dart';
+import 'package:vehicle_list_app/features/add_vehicle/presentation/widgets/custom_text_form_field.dart';
 
 class AddVehicleScreen extends StatefulWidget {
   const AddVehicleScreen({super.key});
@@ -74,19 +75,11 @@ class _AddVehicleScreenState extends State<AddVehicleScreen> {
                   ),
                 ),
                 const SizedBox(height: 24),
-
-                TextFormField(
+                CustomTextFormField(
                   controller: addVehicleProvider.nameController,
-                  decoration: InputDecoration(
-                    labelText: 'Vehicle Name',
-                    hintText: 'e.g., Toyota Camry',
-                    prefixIcon: const Icon(Icons.directions_car),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    filled: true,
-                    fillColor: Colors.grey[50],
-                  ),
+                  labelText: 'Vehicle Name',
+                  hintText: 'e.g., Toyota Camry',
+                  prefixIcon: Icons.directions_car,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter vehicle name';
@@ -94,23 +87,31 @@ class _AddVehicleScreenState extends State<AddVehicleScreen> {
                     return null;
                   },
                 ),
+                // TextFormField(
+                //   controller: addVehicleProvider.nameController,
+                //   decoration: InputDecoration(
+                //     labelText: 'Vehicle Name',
+                //     hintText: 'e.g., Toyota Camry',
+                //     prefixIcon: const Icon(Icons.directions_car),
+                //     border: OutlineInputBorder(
+                //       borderRadius: BorderRadius.circular(12),
+                //     ),
+                //     filled: true,
+                //     fillColor: Colors.grey[50],
+                //   ),
+                //   validator: (value) {
+                //     if (value == null || value.isEmpty) {
+                //       return 'Please enter vehicle name';
+                //     }
+                //     return null;
+                //   },
+                // ),
                 const SizedBox(height: 16),
-
-                TextFormField(
+                CustomTextFormField(
                   controller: addVehicleProvider.fuelEfficiencyController,
-                  keyboardType:
-                      const TextInputType.numberWithOptions(decimal: true),
-                  decoration: InputDecoration(
-                    labelText: 'Fuel Efficiency',
-                    hintText: 'Enter km/l',
-                    prefixIcon: const Icon(Icons.local_gas_station),
-                    suffixText: 'km/l',
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    filled: true,
-                    fillColor: Colors.grey[50],
-                  ),
+                  labelText: 'Fuel Efficiency',
+                  hintText: 'Enter km/l',
+                  prefixIcon: Icons.local_gas_station,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter fuel efficiency';
@@ -121,21 +122,37 @@ class _AddVehicleScreenState extends State<AddVehicleScreen> {
                     return null;
                   },
                 ),
+                // TextFormField(
+                //   controller: addVehicleProvider.fuelEfficiencyController,
+                //   keyboardType:
+                //       const TextInputType.numberWithOptions(decimal: true),
+                //   decoration: InputDecoration(
+                //     labelText: 'Fuel Efficiency',
+                //     hintText: 'Enter km/l',
+                //     prefixIcon: const Icon(Icons.local_gas_station),
+                //     suffixText: 'km/l',
+                //     border: OutlineInputBorder(
+                //       borderRadius: BorderRadius.circular(12),
+                //     ),
+                //     filled: true,
+                //     fillColor: Colors.grey[50],
+                //   ),
+                //   validator: (value) {
+                //     if (value == null || value.isEmpty) {
+                //       return 'Please enter fuel efficiency';
+                //     }
+                //     if (double.tryParse(value) == null) {
+                //       return 'Please enter a valid number';
+                //     }
+                //     return null;
+                //   },
+                // ),
                 const SizedBox(height: 16),
-
-                TextFormField(
+                CustomTextFormField(
                   controller: addVehicleProvider.manufacturingYearController,
-                  keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
-                    labelText: 'Manufacturing Year',
-                    hintText: 'e.g., 2022',
-                    prefixIcon: const Icon(Icons.calendar_today),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    filled: true,
-                    fillColor: Colors.grey[50],
-                  ),
+                  labelText: 'Manufacturing Year',
+                  hintText: 'e.g., 2022',
+                  prefixIcon: Icons.calendar_today,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter manufacturing year';
@@ -151,6 +168,34 @@ class _AddVehicleScreenState extends State<AddVehicleScreen> {
                     return null;
                   },
                 ),
+                // TextFormField(
+                //   controller: addVehicleProvider.manufacturingYearController,
+                //   keyboardType: TextInputType.number,
+                //   decoration: InputDecoration(
+                //     labelText: 'Manufacturing Year',
+                //     hintText: 'e.g., 2022',
+                //     prefixIcon: const Icon(Icons.calendar_today),
+                //     border: OutlineInputBorder(
+                //       borderRadius: BorderRadius.circular(12),
+                //     ),
+                //     filled: true,
+                //     fillColor: Colors.grey[50],
+                //   ),
+                //   validator: (value) {
+                //     if (value == null || value.isEmpty) {
+                //       return 'Please enter manufacturing year';
+                //     }
+                //     final year = int.tryParse(value);
+                //     if (year == null) {
+                //       return 'Please enter a valid year';
+                //     }
+                //     final currentYear = DateTime.now().year;
+                //     if (year < 1900 || year > currentYear) {
+                //       return 'Please enter a year between 1900 and $currentYear';
+                //     }
+                //     return null;
+                //   },
+                // ),
                 const SizedBox(height: 24),
 
                 ElevatedButton(
@@ -184,5 +229,3 @@ class _AddVehicleScreenState extends State<AddVehicleScreen> {
     );
   }
 }
-
-
