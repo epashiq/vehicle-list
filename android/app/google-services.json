@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "305655212521",
+    "project_id": "fir-instagram-3ab0d",
+    "storage_bucket": "fir-instagram-3ab0d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:305655212521:android:a2a1a5396c201c44298378",
+        "android_client_info": {
+          "package_name": "com.example.instagram_demo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8ZavDJ6R_5GPq7wuHpbhiM0nUEDWAHp8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:305655212521:android:51e8f39514754ecf298378",
+        "android_client_info": {
+          "package_name": "com.example.vehicle_list_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8ZavDJ6R_5GPq7wuHpbhiM0nUEDWAHp8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
